@@ -1,43 +1,61 @@
 # Van ERD naar Star Schema — fictieve medische data
 
-In dit project laat ik zien hoe ik **van een ERD** (Entity-Relationship Diagram) **een star schema heb ontworpen en geïmplementeerd** in een SQLite-database met **fictieve huisartsgegevens**.  
-Vervolgens beantwoord ik een reeks analysevragen met handgeschreven SQL.
+In dit project toon ik hoe ik vanuit een ERD (Entity-Relationship Diagram) een star schema heb ontworpen en geïmplementeerd in een SQLite-database met fictieve huisarts- en patiëntgegevens.  
+Vervolgens beantwoord ik diverse analysevragen met SQL-query’s.
 
-## Doel
+## Doel van het project
 
-* **Datamodellering** – het ERD vertalen naar een star schema met één fact-tabel en meerdere dimension-tabellen.  
-* **Implementatie** – de tabellen met SQL aanmaken en vullen in SQLite.  
-* **Analyse** – concrete business-vragen beantwoorden met efficiënte SQL-query’s.
+- **Datamodellering** – Het ERD vertalen naar een star schema met één fact-tabel en meerdere dimension-tabellen.
+- **Implementatie** – De tabellen aanmaken en vullen met SQL in SQLite.
+- **Analyse** – Concrete vragen beantwoorden met efficiënte en leesbare SQL-query’s.
 
-## Structuur
+## Projectstructuur
 
+```plaintext
 fictieve-zorgdata-analyse/
 │
-├── README.md                       # Uitleg en context van het project
+├── README.md                     # Uitleg en context van het project
 │
 ├── analysevragen/
-│   └── analysevragen.sql           # Alle SQL-analysequery’s, gestructureerd en voorzien van commentaar
+│   └── analysevragen.sql         # Alle SQL-analysequery’s, gestructureerd en voorzien van commentaar
 │
 ├── database/
-│   └── huisarts_patient_star.db    # SQLite-database met geïmplementeerd sterschema en fictieve gegevens
+│   └── huisarts_patient_star.db  # SQLite-database met sterschema en fictieve gegevens
 │
 └── ontwerp/
-    ├── ERD_Patient_Huisarts.pdf               # Entity-Relationship Diagram van het bronsysteem
-    └── Sterschem_Patient_Huisarts.jpeg        # Visualisatie van het ontworpen sterschema
+    ├── ERD_Patient_Huisarts.pdf         # Entity-Relationship Diagram van het bronsysteem
+    └── Sterschem_Patient_Huisarts.jpeg  # Visualisatie van het ontworpen sterschema
+```
+## Analysevragen
 
-## Analyse­vragen
+In het bestand `analysevragen/analysevragen.sql` beantwoord ik onder andere:
 
-In `analysevragen/analysevragen.sql` staan o.a.:
-
-* Top 5 huisartsen met de meeste unieke patiënten  
-* Gemiddeld aantal consulten per patiënt  
-* Meest voorgeschreven medicijn per huisarts in 2023  
-* Top 5 verzekeraars naar aantal verzekerden
+- Top 5 huisartsen met de meeste unieke patiënten
+- Gemiddeld aantal consulten per patiënt
+- Meest voorgeschreven medicijn per huisarts in 2023
+- Top 5 verzekeraars naar aantal verzekerden
+- Diagnose- en medicijnstatistieken per jaar of per huisarts
 
 ## Visualisaties
 
-In de map `ontwerp/` vind je het **ERD** en het uiteindelijke **star schema** zodat je snel inzicht hebt in de datamodellen.
+In de map `ontwerp/` vind je:
+
+- Het originele **ERD** van het bronsysteem
+- Het definitieve **sterschema** dat ik heb ontworpen voor analyse
+
+## Instructies om zelf uit te voeren
+
+Wil je dit project zelf verkennen in **DB Browser for SQLite** of een andere tool? Volg deze stappen:
+
+1. Download of clone deze repository.
+2. Open het bestand `huisarts_patient_star.db` via een SQLite-tool zoals:
+   - [DB Browser for SQLite](https://sqlitebrowser.org)
+3. Navigeer naar het tabblad **"SQL uitvoeren"** (of "Execute SQL").
+4. Open het bestand `analysevragen/analysevragen.sql`.
+5. Voer de query’s uit om de resultaten te bekijken.
+
+> De database bevat **volledig fictieve gegevens**, enkel bedoeld voor demonstratie van datamodellering en analyse.
 
 ## Licentie
 
-Dit project staat onder de MIT-licentie.
+Dit project valt onder de [MIT-licentie](https://opensource.org/licenses/MIT).
